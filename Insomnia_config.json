@@ -1,0 +1,225 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-10-29T00:03:43.575Z",
+  "__export_source": "insomnia.desktop.app:v2020.4.1",
+  "resources": [
+    {
+      "_id": "req_d116c016cd9c4c4f80a6271af3fe60f4",
+      "parentId": "fld_44ecb6a4cdaf4e908efbbab2909d11da",
+      "modified": 1603926605445,
+      "created": 1603926591344,
+      "url": "{{ base_url }}/sessions",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"email\": \"vinicius@tartari.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_35002f15a46247e789e617e28e78217b"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1603490419673.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_44ecb6a4cdaf4e908efbbab2909d11da",
+      "parentId": "wrk_910aec94503f46218a624671d6403f36",
+      "modified": 1603926586253,
+      "created": 1603926586253,
+      "name": "Sessions",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1603926586253,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_910aec94503f46218a624671d6403f36",
+      "parentId": null,
+      "modified": 1603044610040,
+      "created": 1603044610040,
+      "name": "GoBarber",
+      "description": "",
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_44fcbadd76c04515a7092434b1376d3a",
+      "parentId": "fld_4cf1a61a4823468da4ba95dff8851f5a",
+      "modified": 1603924292841,
+      "created": 1603922336237,
+      "url": "{{ base_url }}/users",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Vinicius Tartari\",\n\t\"email\": \"vinicius@tartari.com\",\n\t\"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_35002f15a46247e789e617e28e78217b"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1603922336237,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_4cf1a61a4823468da4ba95dff8851f5a",
+      "parentId": "wrk_910aec94503f46218a624671d6403f36",
+      "modified": 1603922321240,
+      "created": 1603922321240,
+      "name": "Users",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1603922321240,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_9fa21fb485154a3e8a6a25e95cb7d49e",
+      "parentId": "fld_d24feadeab4c4feb89a13442e665be0f",
+      "modified": 1603929228468,
+      "created": 1603058503110,
+      "url": "{{ base_url }}/appointments",
+      "name": "Read all",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{{ token }}",
+        "disabled": false
+      },
+      "metaSortKey": -1603058503110,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_d24feadeab4c4feb89a13442e665be0f",
+      "parentId": "wrk_910aec94503f46218a624671d6403f36",
+      "modified": 1603052119192,
+      "created": 1603052119192,
+      "name": "Appoitments",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1603052119192,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_774fca9b0265419d919cc5b0cec47d9e",
+      "parentId": "fld_d24feadeab4c4feb89a13442e665be0f",
+      "modified": 1603928167248,
+      "created": 1603052267423,
+      "url": "{{ base_url }}/appointments",
+      "name": "Create",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"provider_id\": \"7924fd30-b7f8-4d7f-aa24-3da43b560bbb\",\n\t\"date\": \"{% now 'iso-8601', '' %}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bc98de7916ed4b3288cf985efe54c0e2"
+        }
+      ],
+      "authentication": { "type": "bearer", "token": "{{ token }}" },
+      "metaSortKey": -1603052267424,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_231d96f7555af44aab429f84dd6ce80ebec250df",
+      "parentId": "wrk_910aec94503f46218a624671d6403f36",
+      "modified": 1603044610088,
+      "created": 1603044610088,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1603044610088,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_231d96f7555af44aab429f84dd6ce80ebec250df",
+      "parentId": "wrk_910aec94503f46218a624671d6403f36",
+      "modified": 1603044610090,
+      "created": 1603044610090,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_bbb89a7762d045319151895d3f6efc33",
+      "parentId": "wrk_910aec94503f46218a624671d6403f36",
+      "modified": 1603044610044,
+      "created": 1603044610044,
+      "fileName": "GoBarber",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_015c99be59c84004936c14ad0bf63b0e",
+      "parentId": "env_231d96f7555af44aab429f84dd6ce80ebec250df",
+      "modified": 1603928133243,
+      "created": 1603052136832,
+      "name": "dev",
+      "data": {
+        "base_url": "http://localhost:3333",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDM5MjY2NDEsImV4cCI6MTYwNDAxMzA0MSwic3ViIjoiOWQzMjVhZTktZDgzNi00YTE5LWI2NzctNWY1MmNkMjljMmJkIn0.R_VhcOf3u09TdX3U0dSQwwDeGjWp08zZlZenu0ZW2B4"
+      },
+      "dataPropertyOrder": { "&": ["base_url", "token"] },
+      "color": "#7d69cb",
+      "isPrivate": false,
+      "metaSortKey": 1603052136832,
+      "_type": "environment"
+    }
+  ]
+}
